@@ -4,8 +4,7 @@ namespace App\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Contact
-{
+class Contact {
 
     /**
      * @var string|null
@@ -30,7 +29,13 @@ class Contact
      * @Assert\NotBlank()
      * @Assert\Email()
      */
-    private $mail;
+    private $email;
+
+    /**
+     * @var Department|null
+     * @Assert\NotBlank()
+     */
+    private $department;
 
     /**
      * @return string|null
@@ -89,18 +94,36 @@ class Contact
     /**
      * @return string|null
      */
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
     /**
-     * @param string|null $mail
+     * @param string|null $email
      * @return Contact
      */
-    public function setMail(?string $mail): Contact
+    public function setEmail(?string $email): Contact
     {
-        $this->mail = $mail;
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @return Department|null
+     */
+    public function getDepartment(): ?Department
+    {
+        return $this->department;
+    }
+
+    /**
+     * @param Department|null $department
+     * @return Contact
+     */
+    public function setDepartment(?Department $department): Contact
+    {
+        $this->department = $department;
         return $this;
     }
 

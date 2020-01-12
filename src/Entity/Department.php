@@ -21,6 +21,12 @@ class Department
      */
     private $name;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $manager;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +40,18 @@ class Department
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getManager(): ?User
+    {
+        return $this->manager;
+    }
+
+    public function setManager(User $manager): self
+    {
+        $this->manager = $manager;
 
         return $this;
     }
