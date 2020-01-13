@@ -4,7 +4,15 @@
 
 {%  block body %}
     <h1> Fiche Contact </h1>
+
+
     {{form_start(form)}}
-        {{ form_rest(form) }}
+    {{ form_row(form.firstname, { 'label': 'Prénom' }) }}
+    {{ form_row(form.lastname, { 'label': 'Nom' }) }}
+    {{ form_row(form.email, { 'label': 'Email' }) }}
+    {{ form_row(form.department, { 'label': 'Département' }) }}
+    {{ form_row(form.message, { 'label': 'Message' }) }}
+    <button type="submit">Submit</button>
     {{ form_end(form) }}
+
 {%  endblock %}
