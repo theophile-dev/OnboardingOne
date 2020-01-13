@@ -6,6 +6,10 @@ Clone the repository :
 ```
 git clone https://github.com/theophile-dev/OnboardingOne.git
 ```
+Composer install :
+```
+composer install
+```
 
 Setup .env with your DATABASE_URL 
 
