@@ -11,12 +11,12 @@ Setup .env with your DATABASE_URL
 
 Create database :
 ```
-doctrine:database:create
+php bin/console doctrine:database:create
 ```
 
 Run migrations :
 ```
-doctrine:migrations:migrate
+php bin/console doctrine:migrations:migrate
 ```
 
 Load fixtures
