@@ -24,7 +24,7 @@ class ContactController extends AbstractController
             $notification->notify($contact);
 
             // Comment this line if you want to try sending multiple form without reloading
-            //return  $this->redirectToRoute("");
+            // return  $this->redirectToRoute('/');
         }
         return $this->render('pages/contact.html.twig', ['form' => $form->createView()]);
     }
