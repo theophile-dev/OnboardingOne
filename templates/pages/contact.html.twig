@@ -3,8 +3,8 @@
 
 
 {%  block body %}
-    <h1> Fiche Contact </h1>
 
+    <h1> Fiche Contact </h1>
 
     {{form_start(form)}}
     {{ form_row(form.firstname, { 'label': 'Prénom' }) }}
@@ -12,7 +12,7 @@
     {{ form_row(form.email, { 'label': 'Email' }) }}
     {{ form_row(form.department, { 'label': 'Département' }) }}
     {{ form_row(form.message, { 'label': 'Message' }) }}
-    <button type="submit">Submit</button>
+    <button type="submit">Envoyer</button>
     {{ form_end(form) }}
 
 {%  endblock %}
