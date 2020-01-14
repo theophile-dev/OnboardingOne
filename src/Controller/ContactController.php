@@ -20,8 +20,12 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
+            
+            // Send an email to the department's manager
             $notification->notify($contact);
-            //return  $this->redirectToRoute("");
+
+            // Comment this line if you want to try sending multiple form without reloading
+            return  $this->redirectToRoute("");
         }
         return $this->render('pages/contact.html.twig', ['form' => $form->createView()]);
     }

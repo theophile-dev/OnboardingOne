@@ -21,7 +21,6 @@ class ContactNotification {
 
     public function notify(Contact $contact){
         $email = (new TemplatedEmail())
-            // email address as a simple string
             ->from($contact->getEmail())
             ->to($contact->getDepartment()->getManager()->getEmail())
             ->subject('OnboardingOne email de '.$contact->getFirstname())
