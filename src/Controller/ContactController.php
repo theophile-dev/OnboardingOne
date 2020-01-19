@@ -26,8 +26,6 @@ class ContactController extends AbstractController
      */
     public function index(Request $request, ContactNotification $notification, EntityManagerInterface $entityManager): Response {
 
-        $entityManager = $this->getDoctrine()->getManager();
-
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
